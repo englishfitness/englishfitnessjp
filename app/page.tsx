@@ -3,7 +3,6 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <div className="space-y-20">
-
       {/* FEATURES SECTION */}
       <section className="grid gap-6 md:grid-cols-3">
         {[
@@ -31,26 +30,16 @@ export default function HomePage() {
         ))}
       </section>
 
-      {/* BOOK NOW IMAGE CTA */}
-      <section className="flex flex-col items-center">
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdbp2LZS02f8ft_-Vo9JxNQJgXxRTT62rRIQTAm10-y6XRSHw/viewform"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group inline-block"
-        >
+      {/* ✅ BOOK NOW IMAGE CTA now goes to /book */}
+      <section className="flex justify-center">
+        <Link href="/book" className="group" aria-label="Book a session">
           <img
             src="/brand/booknow.png"
             alt="Book Now"
             className="w-[360px] max-w-full transition duration-200 group-hover:scale-105"
           />
-        </a>
-
-        <p className="mt-4 text-sm text-black/60 tracking-wide text-center">
-          After submitting, you’ll receive confirmation within 24 hours.
-        </p>
+        </Link>
       </section>
-
     </div>
   );
 }

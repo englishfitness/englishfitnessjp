@@ -15,7 +15,7 @@ export function SiteHeader() {
       <div className="mx-auto grid max-w-6xl grid-cols-3 items-center px-4 py-6">
         <div />
 
-        {/* Bigger Responsive Logo */}
+        {/* Logo */}
         <Link href="/" className="justify-self-center flex items-center">
           <img
             src="/brand/logo.png"
@@ -24,20 +24,15 @@ export function SiteHeader() {
           />
         </Link>
 
-        {/* Bigger Responsive Book Now */}
+        {/* ✅ Book button now goes to /book (your booking page with embed + terms) */}
         <div className="justify-self-end">
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdbp2LZS02f8ft_-Vo9JxNQJgXxRTT62rRIQTAm10-y6XRSHw/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-block"
-          >
+          <Link href="/book" className="group" aria-label="Book a session">
             <img
               src="/brand/booknow.png"
               alt="Book Now"
               className="h-auto w-[150px] md:w-[170px] lg:w-[190px] xl:w-[210px] transition duration-200 group-hover:scale-105"
             />
-          </a>
+          </Link>
         </div>
       </div>
 
