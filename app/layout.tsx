@@ -16,21 +16,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body
-        className={`${inter.className} min-h-screen`}
+        className={`${inter.className} min-h-screen ef-bg`}
         style={{
+          // ✅ Fallback so the background NEVER disappears
           backgroundImage: "url('/brand/ribbons-bg.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
+          // ✅ Better on mobile (fixed can be janky)
+          backgroundAttachment: "scroll",
         }}
       >
         <SiteHeader />
-
-        <main className="mx-auto w-full max-w-6xl px-4 py-10">
+        <main className="mx-auto w-full max-w-6xl px-4 sm:px-6 py-8 sm:py-10">
           {children}
         </main>
-
         <SiteFooter />
       </body>
     </html>

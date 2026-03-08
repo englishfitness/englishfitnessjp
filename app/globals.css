@@ -205,3 +205,29 @@
     transition: none;
   }
 }
+
+/* ===============================
+   BACKGROUND (Desktop + Mobile)
+=================================*/
+
+/* This is the class used by <body className="... ef-bg"> */
+.ef-bg {
+  background-image: url("/brand/ribbons-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Mobile fix: "fixed" backgrounds can glitch on phones */
+@media (max-width: 768px) {
+  .ef-bg {
+    background-attachment: scroll;
+    background-position: top;
+  }
+
+  /* Optional: slightly smaller nav buttons on phones */
+  .ef-nav-btn {
+    padding: 7px 14px;
+    font-size: 11px;
+  }
+}
