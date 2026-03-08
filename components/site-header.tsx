@@ -51,7 +51,7 @@ export function SiteHeader() {
         @keyframes efMenuPanelIn {
           0% {
             opacity: 0;
-            transform: translateX(-42px);
+            transform: translateX(-56px);
           }
           100% {
             opacity: 1;
@@ -71,7 +71,7 @@ export function SiteHeader() {
         }
 
         .ef-mobile-menu-inner {
-          animation: efMenuPanelIn 460ms cubic-bezier(.22,1,.36,1) forwards;
+          animation: efMenuPanelIn 560ms cubic-bezier(.22,1,.36,1) forwards;
         }
 
         .ef-mobile-nav-item {
@@ -147,8 +147,8 @@ export function SiteHeader() {
           overflow: hidden;
           display: flex;
           flex-direction: column;
-          justify-content: flex-start;
-          align-items: flex-start;
+          justify-content: center;
+          align-items: center;
           flex-shrink: 0;
           border-radius: 28px;
           border: 1px solid rgba(8, 24, 58, 0.08);
@@ -158,10 +158,11 @@ export function SiteHeader() {
             0 20px 45px rgba(10, 20, 40, 0.08),
             inset 0 1px 0 rgba(255,255,255,0.96);
           width: 100%;
-          min-height: 168px;
-          padding: 18px 18px 18px 18px;
+          min-height: 156px;
+          padding: 20px 18px;
           margin: 0 0 18px 0;
           box-sizing: border-box;
+          text-align: center;
         }
 
         .ef-menu-top-card::before {
@@ -186,6 +187,21 @@ export function SiteHeader() {
           height: 160px;
           background: radial-gradient(circle, rgba(220,38,38,0.12), transparent 70%);
           pointer-events: none;
+        }
+
+        .ef-menu-hero-logo {
+          position: relative;
+          z-index: 1;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        .ef-menu-hero-logo img {
+          width: 270px;
+          max-width: 88%;
+          height: auto;
+          display: block;
         }
 
         .ef-menu-cta {
@@ -320,11 +336,15 @@ export function SiteHeader() {
               </button>
             </div>
 
-            <Link href="/" className="justify-self-center flex items-center">
+            <Link
+              href="/"
+              className="justify-self-center flex items-center"
+              style={{ justifyContent: "center" }}
+            >
               <img
                 src="/brand/logo.png"
                 alt="English Fitness"
-                className="h-auto w-[150px]"
+                className="h-auto w-[182px]"
               />
             </Link>
 
@@ -371,7 +391,7 @@ export function SiteHeader() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "48px 1fr 110px",
+                gridTemplateColumns: "48px 1fr 48px",
                 alignItems: "center",
                 gap: 12,
                 marginBottom: 18,
@@ -401,79 +421,31 @@ export function SiteHeader() {
                 </div>
               </button>
 
-              <div style={{ display: "flex", justifyContent: "center" }}>
+              <Link
+                href="/"
+                onClick={() => setOpen(false)}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  transform: "translateX(-6px)",
+                }}
+              >
                 <img
                   src="/brand/logo.png"
                   alt="English Fitness"
-                  style={{ width: 150, height: "auto" }}
+                  style={{ width: 170, height: "auto", cursor: "pointer" }}
                 />
-              </div>
+              </Link>
 
-              <div style={{ display: "flex", justifyContent: "flex-end" }}>
-                <Link href="/book" onClick={() => setOpen(false)}>
-                  <img
-                    src="/brand/booknow.png"
-                    alt="Book Now"
-                    style={{ width: 110, height: "auto" }}
-                  />
-                </Link>
-              </div>
+              <div />
             </div>
 
             <div className="ef-menu-top-card">
-              <div
-                style={{
-                  position: "relative",
-                  zIndex: 1,
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                  borderRadius: 999,
-                  padding: "6px 10px",
-                  background: "rgba(220,38,38,0.08)",
-                  color: "var(--red)",
-                  fontSize: 11,
-                  fontWeight: 900,
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  flexShrink: 0,
-                }}
-              >
-                English Fitness
-              </div>
-
-              <div
-                style={{
-                  position: "relative",
-                  zIndex: 1,
-                  marginTop: 12,
-                  color: "var(--navy)",
-                  fontSize: 28,
-                  lineHeight: 1.02,
-                  fontWeight: 900,
-                  letterSpacing: "-0.035em",
-                  flexShrink: 0,
-                }}
-              >
-                Get fit.
-                <br />
-                Get fluent.
-              </div>
-
-              <div
-                style={{
-                  position: "relative",
-                  zIndex: 1,
-                  marginTop: 10,
-                  color: "rgba(0,0,0,0.58)",
-                  fontSize: 13,
-                  lineHeight: 1.6,
-                  maxWidth: 295,
-                  flexShrink: 0,
-                }}
-              >
-                Build strength, improve your health, and grow your confidence in
-                English with coaching designed for real life in Japan.
+              <div className="ef-menu-hero-logo">
+                <img
+                  src="/brand/getfitgetfluent.png"
+                  alt="Get Fit Get Fluent"
+                />
               </div>
             </div>
 
@@ -502,7 +474,7 @@ export function SiteHeader() {
                     className="ef-mobile-nav-item"
                     style={{
                       padding: "17px 18px 17px 18px",
-                      animationDelay: `${150 + index * 55}ms`,
+                      animationDelay: `${170 + index * 60}ms`,
                     }}
                   >
                     <div
