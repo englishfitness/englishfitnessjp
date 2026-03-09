@@ -70,6 +70,60 @@ export function SiteHeader() {
           }
         }
 
+        .ef-header-shell {
+          position: sticky;
+          top: 0;
+          z-index: 50;
+          border-bottom: none;
+          background:
+            linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
+            url("/brand/ribbons-bg.png");
+          background-size: cover;
+          background-position: center;
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          box-shadow:
+            0 8px 24px rgba(0,0,0,0.08),
+            0 1px 0 rgba(255,255,255,0.90) inset;
+          overflow: hidden;
+        }
+
+        .ef-header-shell::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background:
+            radial-gradient(circle at top left, rgba(220,38,38,0.05), transparent 26%),
+            radial-gradient(circle at top right, rgba(31,79,179,0.05), transparent 26%);
+          pointer-events: none;
+        }
+
+        .ef-header-inner {
+          position: relative;
+          z-index: 1;
+        }
+
+        .ef-header-accent {
+          height: 2px;
+          width: 100%;
+          background: linear-gradient(
+            90deg,
+            rgba(12,47,109,0.9) 0%,
+            rgba(217,31,38,0.9) 50%,
+            rgba(12,47,109,0.9) 100%
+          );
+          opacity: 0.72;
+        }
+
+        .ef-booknow-link img {
+          transition: transform 200ms ease, filter 200ms ease;
+        }
+
+        .ef-booknow-link:hover img {
+          transform: scale(1.05);
+          filter: drop-shadow(0 8px 14px rgba(0,0,0,0.20));
+        }
+
         .ef-mobile-menu-inner {
           animation: efMenuPanelIn 560ms cubic-bezier(.22,1,.36,1) forwards;
         }
@@ -259,107 +313,119 @@ export function SiteHeader() {
       `}</style>
 
       <div className="ef-desktop-header">
-        <header className="sticky top-0 z-50 border-b border-black/5 bg-white/70 backdrop-blur">
-          <div className="mx-auto grid max-w-6xl grid-cols-3 items-center px-4 py-6">
-            <div />
+        <header className="ef-header-shell">
+          <div className="ef-header-inner">
+            <div className="mx-auto grid max-w-6xl grid-cols-3 items-center px-4 py-6">
+              <div />
 
-            <Link href="/" className="justify-self-center flex items-center">
-              <img
-                src="/brand/logo.png"
-                alt="English Fitness"
-                className="h-auto w-[190px] md:w-[210px] lg:w-[235px] xl:w-[255px]"
-              />
-            </Link>
-
-            <div className="justify-self-end">
-              <Link href="/book" className="group" aria-label="Book a session">
+              <Link href="/" className="justify-self-center flex items-center">
                 <img
-                  src="/brand/booknow.png"
-                  alt="Book Now"
-                  className="h-auto w-[150px] md:w-[170px] lg:w-[190px] xl:w-[210px] transition duration-200 group-hover:scale-105"
+                  src="/brand/logo.png"
+                  alt="English Fitness"
+                  className="h-auto w-[190px] md:w-[210px] lg:w-[235px] xl:w-[255px]"
                 />
               </Link>
+
+              <div className="justify-self-end">
+                <Link
+                  href="/book"
+                  className="group ef-booknow-link"
+                  aria-label="Book a session"
+                >
+                  <img
+                    src="/brand/booknow.png"
+                    alt="Book Now"
+                    className="h-auto w-[150px] md:w-[170px] lg:w-[190px] xl:w-[210px]"
+                  />
+                </Link>
+              </div>
             </div>
-          </div>
 
-          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center px-4 pb-6">
-            {nav.map((item, i) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="ef-nav-btn"
-                style={{
-                  animationDelay: `${i * 60}ms`,
-                  margin: "6px 6px",
-                }}
-              >
-                <span className="ef-nav-btn__text">{item.label}</span>
-                <span className="ef-nav-btn__shine" aria-hidden="true" />
-                <span className="ef-nav-btn__noise" aria-hidden="true" />
-              </Link>
-            ))}
-          </div>
+            <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center px-4 pb-6">
+              {nav.map((item, i) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="ef-nav-btn"
+                  style={{
+                    animationDelay: `${i * 60}ms`,
+                    margin: "6px 6px",
+                  }}
+                >
+                  <span className="ef-nav-btn__text">{item.label}</span>
+                  <span className="ef-nav-btn__shine" aria-hidden="true" />
+                  <span className="ef-nav-btn__noise" aria-hidden="true" />
+                </Link>
+              ))}
+            </div>
 
-          <div className="union-accent h-[2px] w-full opacity-70" />
+            <div className="ef-header-accent" />
+          </div>
         </header>
       </div>
 
       <div className="ef-mobile-header">
-        <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur">
-          <div className="mx-auto grid max-w-6xl grid-cols-3 items-center px-4 py-4">
-            <div className="flex items-center">
-              <button
-                type="button"
-                aria-label={open ? "Close menu" : "Open menu"}
-                aria-expanded={open}
-                onClick={() => setOpen((prev) => !prev)}
-                style={{
-                  width: 48,
-                  height: 48,
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  borderRadius: 16,
-                  border: "1px solid rgba(0,0,0,0.08)",
-                  background: "rgba(255,255,255,0.95)",
-                  boxShadow: "0 10px 24px rgba(0,0,0,0.08)",
-                }}
-              >
-                <div
-                  className={`ef-hamburger ${open ? "is-open" : ""}`}
-                  aria-hidden="true"
+        <header className="ef-header-shell">
+          <div className="ef-header-inner">
+            <div className="mx-auto grid max-w-6xl grid-cols-3 items-center px-4 py-4">
+              <div className="flex items-center">
+                <button
+                  type="button"
+                  aria-label={open ? "Close menu" : "Open menu"}
+                  aria-expanded={open}
+                  onClick={() => setOpen((prev) => !prev)}
+                  style={{
+                    width: 48,
+                    height: 48,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderRadius: 16,
+                    border: "1px solid rgba(0,0,0,0.08)",
+                    background: "rgba(255,255,255,0.95)",
+                    boxShadow: "0 10px 24px rgba(0,0,0,0.08)",
+                  }}
                 >
-                  <span />
-                  <span />
-                  <span />
-                </div>
-              </button>
-            </div>
+                  <div
+                    className={`ef-hamburger ${open ? "is-open" : ""}`}
+                    aria-hidden="true"
+                  >
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                </button>
+              </div>
 
-            <Link
-              href="/"
-              className="justify-self-center flex items-center"
-              style={{ justifyContent: "center" }}
-            >
-              <img
-                src="/brand/logo.png"
-                alt="English Fitness"
-                className="h-auto w-[182px]"
-              />
-            </Link>
-
-            <div className="justify-self-end">
-              <Link href="/book" className="group" aria-label="Book a session">
+              <Link
+                href="/"
+                className="justify-self-center flex items-center"
+                style={{ justifyContent: "center" }}
+              >
                 <img
-                  src="/brand/booknow.png"
-                  alt="Book Now"
-                  className="h-auto w-[110px] transition duration-200 group-hover:scale-105"
+                  src="/brand/logo.png"
+                  alt="English Fitness"
+                  className="h-auto w-[182px]"
                 />
               </Link>
-            </div>
-          </div>
 
-          <div className="union-accent h-[2px] w-full opacity-70" />
+              <div className="justify-self-end">
+                <Link
+                  href="/book"
+                  className="group ef-booknow-link"
+                  aria-label="Book a session"
+                >
+                  <img
+                    src="/brand/booknow.png"
+                    alt="Book Now"
+                    className="h-auto w-[110px]"
+                  />
+                </Link>
+              </div>
+            </div>
+
+            <div className="ef-header-accent" />
+          </div>
         </header>
       </div>
 
