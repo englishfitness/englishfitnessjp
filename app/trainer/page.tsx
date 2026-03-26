@@ -191,6 +191,7 @@ export default function TrainerPage() {
         }}
       >
         <div style={{ position: "relative", zIndex: 1 }}>
+          {/* Top header */}
           <div style={{ marginBottom: 36 }}>
             <p
               style={{
@@ -216,6 +217,7 @@ export default function TrainerPage() {
             />
           </div>
 
+          {/* Photo + text */}
           <div className="trainer-layout">
             <div className="trainer-photo-wrap">
               <div
@@ -306,6 +308,7 @@ export default function TrainerPage() {
             </div>
           </div>
 
+          {/* Divider */}
           <div
             style={{
               margin: "44px 0",
@@ -315,6 +318,7 @@ export default function TrainerPage() {
             }}
           />
 
+          {/* Lower sections */}
           <div className="trainer-grid">
             <div>
               <p
@@ -348,6 +352,7 @@ export default function TrainerPage() {
                   paddingLeft: 22,
                 }}
               >
+                <li>ISSA Certified Personal Trainer</li>
                 <li>ISSA Certified Nutrition Coach</li>
                 <li>Certified Strength &amp; Conditioning Coach</li>
                 <li>Powerlifter</li>
@@ -412,6 +417,7 @@ export default function TrainerPage() {
             </div>
           </div>
 
+          {/* Bottom accent */}
           <div style={{ marginTop: 44, display: "flex", justifyContent: "center" }}>
             <div
               style={{
