@@ -270,6 +270,104 @@ export default function BookPage() {
                 View Pricing
               </Link>
             </div>
+
+            <div
+              style={{
+                marginTop: 24,
+                padding: "18px 18px 16px",
+                borderRadius: 18,
+                border: "1px solid rgba(0,0,0,0.08)",
+                background:
+                  "linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(248,250,252,0.96) 100%)",
+                maxWidth: 760,
+              }}
+            >
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: 14,
+                  fontWeight: 700,
+                  color: "var(--navy)",
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                Prefer to reach out directly?
+              </p>
+
+              <p
+                style={{
+                  marginTop: 8,
+                  marginBottom: 0,
+                  fontSize: 15,
+                  color: "rgba(0,0,0,0.72)",
+                  lineHeight: 1.7,
+                }}
+              >
+                Alternatively, you can contact us directly via email or LINE and
+                we’ll respond as soon as possible.
+              </p>
+
+              <div
+                style={{
+                  marginTop: 14,
+                  display: "flex",
+                  gap: 12,
+                  flexWrap: "wrap",
+                  alignItems: "center",
+                }}
+              >
+                <a
+                  href="mailto:englishfitness2024@gmail.com"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: "10px 14px",
+                    borderRadius: 12,
+                    border: "1px solid rgba(0,0,0,0.10)",
+                    background: "#ffffff",
+                    color: "var(--navy)",
+                    fontWeight: 700,
+                    textDecoration: "none",
+                  }}
+                >
+                  Email Us
+                </a>
+
+                <a
+                  href="https://line.me/R/ti/p/@209aherv"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: "10px 14px",
+                    borderRadius: 12,
+                    border: "1px solid rgba(0,0,0,0.08)",
+                    background: "#06C755",
+                    color: "#ffffff",
+                    fontWeight: 800,
+                    textDecoration: "none",
+                    boxShadow: "0 12px 24px rgba(6, 199, 85, 0.20)",
+                  }}
+                >
+                  Contact via LINE
+                </a>
+              </div>
+
+              <p
+                style={{
+                  marginTop: 12,
+                  marginBottom: 0,
+                  fontSize: 13,
+                  color: "rgba(0,0,0,0.58)",
+                  lineHeight: 1.7,
+                }}
+              >
+                englishfitness2024@gmail.com
+              </p>
+            </div>
           </div>
         </section>
 
