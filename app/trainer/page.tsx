@@ -191,7 +191,6 @@ export default function TrainerPage() {
         }}
       >
         <div style={{ position: "relative", zIndex: 1 }}>
-          {/* Top header */}
           <div style={{ marginBottom: 36 }}>
             <p
               style={{
@@ -217,7 +216,6 @@ export default function TrainerPage() {
             />
           </div>
 
-          {/* Photo + text */}
           <div className="trainer-layout">
             <div className="trainer-photo-wrap">
               <div
@@ -230,31 +228,23 @@ export default function TrainerPage() {
                   alignItems: "center",
                   justifyContent: "center",
                   textAlign: "center",
-                  paddingLeft: 24,
-                  paddingRight: 24,
+                  padding: 0,
+                  overflow: "hidden",
                   boxShadow:
                     "0 18px 40px rgba(0,0,0,0.14), 0 1px 0 rgba(255,255,255,0.7) inset",
                   boxSizing: "border-box",
                 }}
               >
-                <div
+                <img
+                  src="/brand/trainer.png"
+                  alt="Trainer"
                   style={{
-                    fontSize: 14,
-                    color: "rgba(0,0,0,0.55)",
-                    lineHeight: 1.45,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    transform: "scale(1.08)",
                   }}
-                >
-                  Photo coming soon
-                  <div
-                    style={{
-                      marginTop: 6,
-                      fontSize: 12,
-                      color: "rgba(0,0,0,0.40)",
-                    }}
-                  >
-                    (after next week’s shoot)
-                  </div>
-                </div>
+                />
               </div>
             </div>
 
@@ -316,7 +306,6 @@ export default function TrainerPage() {
             </div>
           </div>
 
-          {/* Divider */}
           <div
             style={{
               margin: "44px 0",
@@ -326,7 +315,6 @@ export default function TrainerPage() {
             }}
           />
 
-          {/* Lower sections */}
           <div className="trainer-grid">
             <div>
               <p
@@ -424,7 +412,6 @@ export default function TrainerPage() {
             </div>
           </div>
 
-          {/* Bottom accent */}
           <div style={{ marginTop: 44, display: "flex", justifyContent: "center" }}>
             <div
               style={{
