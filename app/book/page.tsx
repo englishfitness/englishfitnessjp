@@ -5,21 +5,17 @@ import Link from "next/link";
 const FORM_VIEW_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSdbp2LZS02f8ft_-Vo9JxNQJgXxRTT62rRIQTAm10-y6XRSHw/viewform";
 
-const FORM_EMBED_URL = `${FORM_VIEW_URL}?embedded=true`;
-
 export default function BookPage() {
   return (
     <div style={{ paddingTop: 90, paddingBottom: 140 }}>
       <style>{`
         .book-header-card,
-        .book-form-card,
         .book-terms-card {
           position: relative;
           overflow: hidden;
         }
 
         .book-header-card::before,
-        .book-form-card::before,
         .book-terms-card::before {
           content: "";
           position: absolute;
@@ -47,7 +43,7 @@ export default function BookPage() {
 
         .book-main-grid {
           display: grid;
-          grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+          grid-template-columns: 1fr;
           gap: 24px;
           align-items: start;
         }
@@ -55,23 +51,6 @@ export default function BookPage() {
         .book-header-title {
           font-size: 36px;
           line-height: 1.1;
-        }
-
-        .book-form-iframe {
-          width: 100%;
-          height: 820px;
-          border: 0;
-          display: block;
-        }
-
-        @media (max-width: 980px) {
-          .book-main-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .book-form-iframe {
-            height: 780px;
-          }
         }
 
         @media (max-width: 768px) {
@@ -86,16 +65,8 @@ export default function BookPage() {
             margin-bottom: 20px !important;
           }
 
-          .book-form-card,
           .book-terms-card {
             border-radius: 24px !important;
-          }
-
-          .book-form-card {
-            min-height: 0 !important;
-          }
-
-          .book-terms-card {
             padding: 26px 22px !important;
           }
 
@@ -116,10 +87,6 @@ export default function BookPage() {
           .book-button {
             width: 100%;
             justify-content: center !important;
-          }
-
-          .book-form-iframe {
-            height: 720px !important;
           }
 
           .book-note {
@@ -145,10 +112,6 @@ export default function BookPage() {
 
           .book-header-title {
             font-size: 24px !important;
-          }
-
-          .book-form-iframe {
-            height: 660px !important;
           }
         }
       `}</style>
@@ -216,8 +179,8 @@ export default function BookPage() {
                 marginBottom: 0,
               }}
             >
-              Fill out the request form below. After submitting, you’ll receive
-              confirmation within 24 hours.
+              Choose the option that works best for you. We’ll confirm your
+              session within 24 hours.
             </p>
 
             <div
@@ -229,6 +192,47 @@ export default function BookPage() {
                 flexWrap: "wrap",
               }}
             >
+              <a
+                className="book-button"
+                href="https://line.me/R/ti/p/@209aherv"
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "12px 16px",
+                  borderRadius: 14,
+                  border: "1px solid rgba(0,0,0,0.08)",
+                  background: "#06C755",
+                  color: "#ffffff",
+                  fontWeight: 800,
+                  textDecoration: "none",
+                  boxShadow: "0 16px 30px rgba(6, 199, 85, 0.22)",
+                }}
+              >
+                Book via LINE
+              </a>
+
+              <a
+                className="book-button"
+                href="mailto:englishfitness2024@gmail.com"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "12px 16px",
+                  borderRadius: 14,
+                  border: "1px solid rgba(0,0,0,0.10)",
+                  background: "#ffffff",
+                  color: "var(--navy)",
+                  fontWeight: 800,
+                  textDecoration: "none",
+                }}
+              >
+                Email Us
+              </a>
+
               <a
                 className="book-button"
                 href={FORM_VIEW_URL}
@@ -248,7 +252,7 @@ export default function BookPage() {
                   boxShadow: "0 16px 30px rgba(22, 61, 143, 0.22)",
                 }}
               >
-                Open form in new tab
+                Request a Session Form
               </a>
 
               <Link
@@ -270,108 +274,10 @@ export default function BookPage() {
                 View Pricing
               </Link>
             </div>
-
-            <div
-              style={{
-                marginTop: 24,
-                padding: "18px 18px 16px",
-                borderRadius: 18,
-                border: "1px solid rgba(0,0,0,0.08)",
-                background:
-                  "linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(248,250,252,0.96) 100%)",
-                maxWidth: 760,
-              }}
-            >
-              <p
-                style={{
-                  margin: 0,
-                  fontSize: 14,
-                  fontWeight: 700,
-                  color: "var(--navy)",
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                Prefer to reach out directly?
-              </p>
-
-              <p
-                style={{
-                  marginTop: 8,
-                  marginBottom: 0,
-                  fontSize: 15,
-                  color: "rgba(0,0,0,0.72)",
-                  lineHeight: 1.7,
-                }}
-              >
-                Alternatively, you can contact us directly via email or LINE and
-                we’ll respond as soon as possible.
-              </p>
-
-              <div
-                style={{
-                  marginTop: 14,
-                  display: "flex",
-                  gap: 12,
-                  flexWrap: "wrap",
-                  alignItems: "center",
-                }}
-              >
-                <a
-                  href="mailto:englishfitness2024@gmail.com"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: "10px 14px",
-                    borderRadius: 12,
-                    border: "1px solid rgba(0,0,0,0.10)",
-                    background: "#ffffff",
-                    color: "var(--navy)",
-                    fontWeight: 700,
-                    textDecoration: "none",
-                  }}
-                >
-                  Email Us
-                </a>
-
-                <a
-                  href="https://line.me/R/ti/p/@209aherv"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: "10px 14px",
-                    borderRadius: 12,
-                    border: "1px solid rgba(0,0,0,0.08)",
-                    background: "#06C755",
-                    color: "#ffffff",
-                    fontWeight: 800,
-                    textDecoration: "none",
-                    boxShadow: "0 12px 24px rgba(6, 199, 85, 0.20)",
-                  }}
-                >
-                  Contact via LINE
-                </a>
-              </div>
-
-              <p
-                style={{
-                  marginTop: 12,
-                  marginBottom: 0,
-                  fontSize: 13,
-                  color: "rgba(0,0,0,0.58)",
-                  lineHeight: 1.7,
-                }}
-              >
-                englishfitness2024@gmail.com
-              </p>
-            </div>
           </div>
         </section>
 
-        {/* Form + Terms */}
+        {/* Terms only */}
         <div
           className="book-main-grid"
           style={{
@@ -379,30 +285,6 @@ export default function BookPage() {
             margin: "0 auto",
           }}
         >
-          {/* Embedded Google Form */}
-          <section
-            className="book-form-card"
-            style={{
-              backgroundColor: "#ffffff",
-              borderRadius: 28,
-              border: "1px solid rgba(0,0,0,0.08)",
-              boxShadow:
-                "0 30px 70px rgba(0,0,0,0.12), 0 1px 0 rgba(255,255,255,0.6) inset",
-              overflow: "hidden",
-              minHeight: 720,
-            }}
-          >
-            <div style={{ position: "relative", zIndex: 1 }}>
-              <iframe
-                title="English Fitness Booking Request Form"
-                src={FORM_EMBED_URL}
-                className="book-form-iframe"
-                loading="lazy"
-              />
-            </div>
-          </section>
-
-          {/* Terms & Conditions */}
           <aside
             className="book-terms-card"
             style={{
@@ -522,7 +404,6 @@ export default function BookPage() {
           </aside>
         </div>
 
-        {/* Responsive note */}
         <div
           className="book-note"
           style={{
@@ -532,8 +413,7 @@ export default function BookPage() {
             color: "rgba(0,0,0,0.60)",
           }}
         >
-          If the embedded form looks strange on your device, use “Open form in
-          new tab” for the best experience.
+          We’ll respond to all enquiries as soon as possible.
         </div>
       </div>
     </div>
